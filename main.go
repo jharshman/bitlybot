@@ -7,7 +7,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	B "./lib"
+	"github.com/OscarLuu/bitlybot/lib"
 	"github.com/bwmarrin/discordgo"
 )
 
@@ -29,7 +29,7 @@ func main() {
 		return
 	}
 
-	dg.AddHandler(B.MessageCreate)
+	dg.AddHandler(lib.OnMessageCreate)
 
 	// open connection to Discord
 	err = dg.Open()
